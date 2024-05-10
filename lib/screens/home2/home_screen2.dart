@@ -2,9 +2,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:managerment_yoga/colorsfile.dart';
-import 'package:managerment_yoga/screens/home2/widget/courses.dart';
-import 'package:managerment_yoga/screens/home2/widget/custom_app_bar.dart';
-import 'package:managerment_yoga/screens/home2/widget/diff_styles.dart';
+import 'package:managerment_yoga/screens/home/home_screen.dart';
+import 'package:managerment_yoga/screens/home3/home_screen3.dart';
+import 'package:managerment_yoga/screens/settings/settings_screens.dart';
 
 class HomeScreen2 extends StatefulWidget {
   @override
@@ -13,14 +13,20 @@ class HomeScreen2 extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen2> {
   int selectedIconIndex = 2;
-  // final List<Widget> _children = [HomeScreen(),DetailsScreen(),Home3(),Screen4(),Screen5()];
+  final List<Widget> _children = [
+    Placeholder(), // Placeholder added for index 0
+    Placeholder(), // Placeholder added for index 1
+    HomeScreen(), // HomeScreen widget at index 2
+    Placeholder(), // Placeholder added for index 3
+    SettingScreen(), // Placeholder added for index 4
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       extendBody: true,
-      // body: _children[selectedIconIndex],
+      body: _children[selectedIconIndex],
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
         index: selectedIconIndex,
@@ -42,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen2> {
             color: selectedIconIndex == 0 ? white : black,
           ),
           Icon(
-            Icons.search,
+            Icons.access_time_outlined,
             size: 30,
             color: selectedIconIndex == 1 ? white : black,
           ),
@@ -57,29 +63,11 @@ class _HomeScreenState extends State<HomeScreen2> {
             color: selectedIconIndex == 3 ? white : black,
           ),
           Icon(
-            Icons.person_outline,
+            Icons.settings_outlined,
             size: 30,
             color: selectedIconIndex == 4 ? white : black,
           ),
         ],
-      ),
-    );
-  }
-}
-
-class Home3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(top: appPadding * 2),
-        child: Column(
-          children: [
-            CustomAppBar(),
-            DiffStyles(),
-            Courses(),
-          ],
-        ),
       ),
     );
   }

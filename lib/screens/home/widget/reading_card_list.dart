@@ -9,7 +9,7 @@ class ReadingListCard extends StatelessWidget {
   final Function pressDetails;
   final Function pressRead;
   const ReadingListCard({
-    required Key key,
+    Key? key,
     required this.image,
     required this.title,
     required this.auth,
@@ -37,7 +37,7 @@ class ReadingListCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(29),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0, 10),
+                    offset: const Offset(0, 10),
                     blurRadius: 33,
                     color: kShadowColor,
                   ),
@@ -55,7 +55,7 @@ class ReadingListCard extends StatelessWidget {
             child: Column(
               children: [
                 IconButton(
-                  icon: Icon(Icons.favorite_border),
+                  icon: const Icon(Icons.favorite_border),
                   onPressed: () {},
                 ),
                 // BookRating(score: rating),
@@ -100,9 +100,9 @@ class ReadingListCard extends StatelessWidget {
                         // onTap: pressDetails,
                         child: Container(
                           width: 101,
-                          padding: EdgeInsets.symmetric(vertical: 10),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                           alignment: Alignment.center,
-                          child: Text(" Details"),
+                          child: const Text(" Details"),
                         ),
                       ),
                       // Expanded(

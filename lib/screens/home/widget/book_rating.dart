@@ -4,7 +4,7 @@ import 'package:managerment_yoga/colorsfile.dart';
 class BookRating extends StatelessWidget {
   final double score;
   const BookRating({
-    required Key key,
+    Key? key,
     required this.score,
   }) : super(key: key);
 
